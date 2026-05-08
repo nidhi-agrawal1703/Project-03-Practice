@@ -114,6 +114,15 @@ if(userLoggedIn){
  	   if (user.getRoleId() == RoleDTO.ADMIN) {
        %>
        
+        <!-- Report-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" style="color:white;">Report</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="<%=ORSView.REPORT_CTL%>"><i class="fa fa-user-circle"></i> Add Report</a>
+            <a class="dropdown-item" href="<%=ORSView.REPORT_LIST_CTL%>"><i class="fa fa-user-friends"></i>Report List</a>
+          </div>
+        </li>
+       
         <!-- STUDENT-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" style="color:white;">Student</a>

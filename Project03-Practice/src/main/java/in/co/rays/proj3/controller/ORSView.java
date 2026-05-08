@@ -86,6 +86,12 @@ public interface ORSView {
 
 	public String STUDENT_LIST_VIEW = PAGE_FOLDER + "/StudentListView.jsp";
 	public String STUDENT_LIST_CTL = APP_CONTEXT + "/ctl/StudentListCtl";
+	
+	public String REPORT_VIEW = PAGE_FOLDER + "/ReportView.jsp";
+	public String REPORT_CTL = APP_CONTEXT + "/ctl/ReportCtl";
+
+	public String REPORT_LIST_VIEW = PAGE_FOLDER + "/ReportListView.jsp";
+	public String REPORT_LIST_CTL = APP_CONTEXT + "/ctl/ReportListCtl";
 
 	public String ERROR_VIEW = PAGE_FOLDER + "/ErrorView.jsp";
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";

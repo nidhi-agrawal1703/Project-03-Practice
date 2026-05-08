@@ -118,6 +118,18 @@ public class ModelFactory {
 		return studentModel;
 	}
 	
+	public ReportModelInt getReportModel() {
+		ReportModelInt reportModel=(ReportModelInt)modelCache.get("reportModel");
+		if(reportModel==null) {
+			if("Hibernate".equals(DATABASE)) {
+				reportModel=new ReportModelHibImpl();
+			}
+			modelCache.put("reportModel", reportModel);
+		}
+
+		return reportModel;
+	}
+	
 	
 	public UsageModelInt getUsageModel() {
 		UsageModelInt usageModel=(UsageModelInt)modelCache.get("usageModel");
