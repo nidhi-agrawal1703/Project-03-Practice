@@ -113,6 +113,15 @@ if(userLoggedIn){
         <%
  	   if (user.getRoleId() == RoleDTO.ADMIN) {
        %>
+       <!-- LanguageTranslation-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" style="color:white;">LanguageTranslation</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="<%=ORSView.LANGUAGETRANSLATION_CTL%>"><i class="fa fa-user-circle"></i> Add LanguageTranslation</a>
+            <a class="dropdown-item" href="<%=ORSView.LANGUAGETRANSLATION_LIST_CTL%>"><i class="fa fa-user-friends"></i>LanguageTranslation List</a>
+          </div>
+        </li>
+       
        
         <!-- Report-->
         <li class="nav-item dropdown">

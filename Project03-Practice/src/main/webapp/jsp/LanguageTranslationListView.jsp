@@ -1,4 +1,3 @@
-<%@page import="javax.management.relation.RoleList"%>
 <%@page import="in.co.rays.proj3.controller.ORSView"%>
 <%@page import="java.util.LinkedHashMap"%>
 <%@page import="in.co.rays.proj3.util.HTMLUtility"%>
@@ -7,7 +6,6 @@
 <%@page import="in.co.rays.proj3.controller.LanguageTranslationListCtl"%>
 <%@page import="in.co.rays.proj3.util.ServletUtility"%>
 <%@page import="in.co.rays.proj3.dto.LanguageTranslationDTO"%>
-<%@page import="in.co.rays.proj3.dto.RoleDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
 
@@ -62,10 +60,8 @@
                             <h4><%=ServletUtility.getErrorMessage(request)%></h4>
  						</div>
  						<% }%>
- 						
- 					
  <!-- Form -->						
-	<form action="<%=ORSView.LANGUAGETRANSLATION_CTL%>" method="post"> 
+	<form action="<%=ORSView.LANGUAGETRANSLATION_LIST_CTL%>" method="post"> 
 	
 	<%
 	int pageNo = ServletUtility.getPageNo(request);
@@ -91,16 +87,15 @@
 							
 <!-- Search Form -->
 <div class="row search-row">
-	<div class="col-md-4">
-	<input type="text" class="form-control" name="sourceLanguage" placeholder="Enter Source Language"
-		 value="<%=ServletUtility.getParameter("sourceLanguage", request)%>">
+	<div class="col-md-3">
 	</div>
-	<div class="col-md-4">
-		<input type="text" class="form-control" name="targetLanguage" placeholder="Enter Target Language"
-		value="<%=ServletUtility.getParameter("targetLanguage", request)%>">
+	<div class="col-md-3">
+		<input type="text" class="form-control" name="sourceLanguage" placeholder="Source Language" value="<%=ServletUtility.getParameter("sourceLanguage", request)%>">
 	</div>
-	
-	<div class="col-md-4">
+	<div class="col-md-3">
+		<input type="text" class="form-control" name="targetLanguage" placeholder="Target Language" value="<%=ServletUtility.getParameter("targetLanguage", request)%>">
+	</div>
+	<div class="col-md-3">
 		<input type="submit" class="btn btn-primary btn-md" name="operation" value="<%=LanguageTranslationListCtl.OP_SEARCH%>">
         <input type="submit" class="btn btn-secondary btn-md" name="operation" value="<%=LanguageTranslationListCtl.OP_RESET%>">
 	</div>
@@ -113,14 +108,18 @@
                     <tr align="center" style="background:#8C8C8C;">
                     <th width="5%"><input type="checkbox" id="selectall" /></th>
                     <th align="center">S.NO</th>
-						<th>Source Language</th>
-                        <th>Target Language</th>
-                        <th>Input Text</th>
-                        <th>Translated Text</th>
-                        <th>Edit</th>
+							<th>Source Language</th>
+                       		 <th>Target Language</th>
+                       		 <th>Input Text</th>
+                       		 <th>Translated Text</th>
+                       		 <th>Edit</th>
 
                      </tr>
                 </thead>
+	<%
+                    while (it.hasNext()) {
+                    	dto=(LanguageTranslationDTO)it.next();
+                %>
 	
 		<tbody align="center">
                     <tr>
@@ -128,18 +127,18 @@
                         <input type="checkbox" class="case" name="ids" value="<%=dto.getId()%>">
                     </td>
                     <td style="text-align: center;"><%=index++%></td>
-                   <td><%=index++ %></td>
-                        <td><%=dto.getSourceLanguage()%></td>
-                        <td><%=dto.getTargetLanguage() %></td>
-                        <td><%=dto.getInputText() %></td>
-                        <td><%=dto.getTranslatedText() %></td>
-                        <td><a href="LanguageTranslationCtl?id=<%=dto.getId()%>">Edit</a></td>                    </tr>
+                    <td align="center"><%=dto.getSourceLanguage()%></td>
+							<td align="center"><%=dto.getTargetLanguage()%></td>
+							<td align="center"><%=dto.getInputText()%></td>
+							<td align="center"><%=dto.getTranslatedText()%></td>
+							<td align="center"><a href="LanguageTranslationCtl?id=<%=dto.getId()%>">Edit</a></td>
+                    </tr>
 
                     
                 </tbody>
 			
 	<%
-                    
+                    }
                 %>
 	</table>
 

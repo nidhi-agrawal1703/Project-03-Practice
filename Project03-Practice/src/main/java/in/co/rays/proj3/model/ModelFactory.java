@@ -130,6 +130,18 @@ public class ModelFactory {
 		return reportModel;
 	}
 	
+	public LanguageTranslationModelInt getLanguageTranslationModel() {
+		LanguageTranslationModelInt languageTranslationModel=(LanguageTranslationModelInt)modelCache.get("languageTranslationModel");
+		if(languageTranslationModel==null) {
+			if("Hibernate".equals(DATABASE)) {
+				languageTranslationModel=new LanguageTranslationModelHibImpl();
+			}
+			modelCache.put("languageTranslationModel", languageTranslationModel);
+		}
+
+		return languageTranslationModel;
+	}
+	
 	
 	public UsageModelInt getUsageModel() {
 		UsageModelInt usageModel=(UsageModelInt)modelCache.get("usageModel");

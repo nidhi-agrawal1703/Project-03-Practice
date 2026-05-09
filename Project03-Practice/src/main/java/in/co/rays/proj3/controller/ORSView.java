@@ -93,6 +93,12 @@ public interface ORSView {
 	public String REPORT_LIST_VIEW = PAGE_FOLDER + "/ReportListView.jsp";
 	public String REPORT_LIST_CTL = APP_CONTEXT + "/ctl/ReportListCtl";
 
+	public String LANGUAGETRANSLATION_VIEW = PAGE_FOLDER + "/LanguageTranslationView.jsp";
+	public String LANGUAGETRANSLATION_CTL = APP_CONTEXT + "/ctl/LanguageTranslationCtl";
+
+	public String LANGUAGETRANSLATION_LIST_VIEW = PAGE_FOLDER + "/LanguageTranslationListView.jsp";
+	public String LANGUAGETRANSLATION_LIST_CTL = APP_CONTEXT + "/ctl/LanguageTranslationListCtl";
+
 	public String ERROR_VIEW = PAGE_FOLDER + "/ErrorView.jsp";
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 	
