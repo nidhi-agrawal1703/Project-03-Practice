@@ -1,6 +1,6 @@
 <%@page import="in.co.rays.proj3.controller.ORSView"%>
-<%@page import="in.co.rays.proj3.controller.NFTAssetCtl"%>
-<%@page import="in.co.rays.proj3.dto.NFTAssetDTO"%>
+<%@page import="in.co.rays.proj3.controller.AccountCtl"%>
+<%@page import="in.co.rays.proj3.dto.AccountDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="in.co.rays.proj3.util.HTMLUtility"%>
@@ -11,7 +11,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Add NFTAsset</title>
+<title>Add Account</title>
 <link rel="icon" type="image/png" href="<%=ORSView.APP_CONTEXT%>/img/logo.png" sizes="16x16" />
 <style>
 	.bgColor {
@@ -37,7 +37,7 @@
 	<%@ include file="Header.jsp" %>
 	
 <!-- Bean Tag -->
-	<jsp:useBean id="dto" class="in.co.rays.proj3.dto.NFTAssetDTO" scope="request"></jsp:useBean>
+	<jsp:useBean id="dto" class="in.co.rays.proj3.dto.AccountDTO" scope="request"></jsp:useBean>
 	
 	
 <!-- Main Content -->
@@ -52,9 +52,9 @@
 						
 							if(dto.getId()!=null && dto.getId()>0){						
 						%>				
-						<h3 class="text-center text-primary pb-3">Update NFTAsset</h3>
+						<h3 class="text-center text-primary pb-3">Update Account</h3>
 						<%}else { %>
-						<h3 class="text-center text-primary pb-3">Add NFTAsset</h3>
+						<h3 class="text-center text-primary pb-3">Add Account</h3>
 						<%} %>
 						
 						<!-- Static Success Message -->
@@ -76,60 +76,60 @@
 						
 						
 						<!-- Form Start -->
-						<form action="<%=ORSView.NFTASSET_CTL %>" method="post">
+						<form action="<%=ORSView.ACCOUNT_CTL %>" method="post">
 						
 						
 						
-						<!-- NFTAsset Code-->
- 							<label><b>NFTAsset Code</b><span style="color:red">*</span></label>
+						<!-- Account Number-->
+ 							<label><b>Account Number</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
  								<div class="input-class-prepend">
  									<span class="input-group-text" id="basic-addon1"><i class="fa fa-clock" style="font-size: 25px;"></i></span>
  									
  								</div>
  								
- 								<input type="text" class="form-control" name="nftCode" placeholder="NFTAsset Code" 
- 								value="<%=DataUtility.getStringData(dto.getNftCode())%>">
+ 								<input type="text" class="form-control" name="accNumber" placeholder="Account Number" 
+ 								value="<%=DataUtility.getStringData(dto.getAccNumber())%>">
  								</div>
- 								<font color="red"><%=ServletUtility.getErrorMessage("nftCode", request)%></font><br>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("accNumber", request)%></font><br>
  								
  												
-						<!-- Asset Name-->
- 							<label><b>Asset Name</b><span style="color:red">*</span></label>
+						<!-- Holder Name-->
+ 							<label><b>Holder Name</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
  								<div class="input-class-prepend">
  									<span class="input-group-text" id="basic-addon1"><i class="fa fa-clock" style="font-size: 25px;"></i></span>
  									
  								</div>
  								
- 								<input type="text" class="form-control" name="assetName" placeholder="Asset Name" 
- 								value="<%=DataUtility.getStringData(dto.getAssetName())%>">
+ 								<input type="text" class="form-control" name="holderName" placeholder="Holder Name" 
+ 								value="<%=DataUtility.getStringData(dto.getHolderName())%>">
  								</div>
- 								<font color="red"><%=ServletUtility.getErrorMessage("assetName", request)%></font><br>
+ 								<font color="red"><%=ServletUtility.getErrorMessage("holderName", request)%></font><br>
  								
-							<!--NFTAsset Owner NAme-->
- 							<label><b>Owner Name</b><span style="color:red">*</span></label>
+							<!--Account Type-->
+ 							<label><b>Account Type</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
  								<div class="input-class-prepend">
  									<span class="input-group-text" id="basic-addon1"><i class="fa fa-list" style="font-size: 25px;"></i></span>
  									
  								</div>
- 								<input type="text" class="form-control" name="ownerName" placeholder="NFTAsset Owner Name"
- 								value="<%=DataUtility.getStringData(dto.getOwnerName())%>">
+ 								<input type="text" class="form-control" name="accType" placeholder="Account TYpe"
+ 								value="<%=DataUtility.getStringData(dto.getAccType())%>">
  								</div>
- 								<font color="red"><%=ServletUtility.getErrorMessage("ownerName", request)%></font><br> 
+ 								<font color="red"><%=ServletUtility.getErrorMessage("accType", request)%></font><br> 
  												
-							<!--Status -->
- 							<label><b>Status</b><span style="color:red">*</span></label>
+							<!--Email -->
+ 							<label><b>Email</b><span style="color:red">*</span></label>
  							<div class="input-group mb-3">
  								<div class="input-class-prepend">
  									<span class="input-group-text" id="basic-addon1"><i class="fa fa-list" style="font-size: 25px;"></i></span>
  									
  								</div>
- 								<input type="text" class="form-control" name="status" placeholder="Status"
- 								value="<%=DataUtility.getStringData(dto.getStatus())%>">
+ 								<input type="text" class="form-control" name="email" placeholder="Email"
+ 								value="<%=DataUtility.getStringData(dto.getEmail())%>">
  								</div>
- 								<font color="red"><%=ServletUtility.getErrorMessage("status", request)%></font><br> 
+ 								<font color="red"><%=ServletUtility.getErrorMessage("email", request)%></font><br> 
 								
  							
 							<input type="hidden" name="id" value="<%=dto.getId()%>">
@@ -140,14 +140,14 @@
 						
 						<!-- Buttons -->
 						<div class="text-center">
-							<input type="submit" class="btn btn-success" name="operation" value="<%=NFTAssetCtl.OP_SAVE%>" >						
+							<input type="submit" class="btn btn-success" name="operation" value="<%=AccountCtl.OP_SAVE%>" >						
 						
 						<%
                         if (dto.getId() !=null) {
                     %>
                                                 
                                 
-                                <input type="submit" class="btn btn-secondary" name="operation"value="<%=NFTAssetCtl.OP_CANCEL%>"><br>  								                          
+                                <input type="submit" class="btn btn-secondary" name="operation"value="<%=AccountCtl.OP_CANCEL%>"><br>  								                          
                             </div> 							
 						
                     <%
@@ -155,7 +155,7 @@
                     %>
                                                 
                                 
-                                <input type="submit" class="btn btn-secondary" name="operation"value="<%=NFTAssetCtl.OP_RESET%>"><br>  								                          
+                                <input type="submit" class="btn btn-secondary" name="operation"value="<%=AccountCtl.OP_RESET%>"><br>  								                          
                             </div> 							
 						
                     <%

@@ -97,8 +97,20 @@ public interface ORSView {
 	public String LANGUAGETRANSLATION_CTL = APP_CONTEXT + "/ctl/LanguageTranslationCtl";
 
 	public String LANGUAGETRANSLATION_LIST_VIEW = PAGE_FOLDER + "/LanguageTranslationListView.jsp";
-	public String LANGUAGETRANSLATION_LIST_CTL = APP_CONTEXT + "/ctl/LanguageTranslationListCtl";
+	public String LANGUAGETRANSLATION_LIST_CTL = APP_CONTEXT + "/ctl/LanguageTranslationListCtl";	
 
+	public String ACCOUNT_VIEW = PAGE_FOLDER + "/AccountView.jsp";
+	public String ACCOUNT_CTL = APP_CONTEXT + "/ctl/AccountCtl";
+
+	public String ACCOUNT_LIST_VIEW = PAGE_FOLDER + "/AccountListView.jsp";
+	public String ACCOUNT_LIST_CTL = APP_CONTEXT + "/ctl/AccountListCtl";
+	
+	public String NFTASSET_VIEW = PAGE_FOLDER + "/NFTAssetView.jsp";
+	public String NFTASSET_CTL = APP_CONTEXT + "/ctl/NFTAssetCtl";
+
+	public String NFTASSET_LIST_VIEW = PAGE_FOLDER + "/NFTAssetListView.jsp";
+	public String NFTASSET_LIST_CTL = APP_CONTEXT + "/ctl/NFTAssetListCtl";
+	
 	public String ERROR_VIEW = PAGE_FOLDER + "/ErrorView.jsp";
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 	

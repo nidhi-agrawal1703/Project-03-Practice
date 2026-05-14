@@ -7,7 +7,7 @@
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<property name="hibernate.connection.password">root</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/project03</property>
-   <!--<property name="hibernate.connection.url">jdbc:mysql://mysql:3306/project03practice</property>-->
+   		<!--<property name="hibernate.connection.url">jdbc:mysql://mysql:3306/project03</property>-->
    		<property name="hibernate.connection.username">root</property>
    		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
    		
@@ -21,6 +21,8 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
+		<mapping resource="in/co/rays/proj3/hbm/NFTAssetDTO.hbm.xml" />
+		<mapping resource="in/co/rays/proj3/hbm/AccountDTO.hbm.xml" />
 		<mapping resource="in/co/rays/proj3/hbm/LanguageTranslationDTO.hbm.xml" />
 		<mapping resource="in/co/rays/proj3/hbm/ReportDTO.hbm.xml" />
 		<mapping resource="in/co/rays/proj3/hbm/StudentDTO.hbm.xml" />

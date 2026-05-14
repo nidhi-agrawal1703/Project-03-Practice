@@ -142,6 +142,29 @@ public class ModelFactory {
 		return languageTranslationModel;
 	}
 	
+	public AccountModelInt getAccountModel() {
+		AccountModelInt accountModel=(AccountModelInt)modelCache.get("accountModel");
+		if(accountModel==null) {
+			if("Hibernate".equals(DATABASE)) {
+				accountModel=new AccountModelHibImpl();
+			}
+			modelCache.put("accountModel", accountModel);
+		}
+
+		return accountModel;
+	}
+	
+	public NFTAssetModelInt getNFTAssetModel() {
+		NFTAssetModelInt nftAssetModel=(NFTAssetModelInt)modelCache.get("nftAssetModel");
+		if(nftAssetModel==null) {
+			if("Hibernate".equals(DATABASE)) {
+				nftAssetModel=new NFTAssetModelHibImpl();
+			}
+			modelCache.put("nftAssetModel", nftAssetModel);
+		}
+
+		return nftAssetModel;
+	}
 	
 	public UsageModelInt getUsageModel() {
 		UsageModelInt usageModel=(UsageModelInt)modelCache.get("usageModel");

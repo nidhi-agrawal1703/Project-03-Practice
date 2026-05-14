@@ -113,6 +113,26 @@ if(userLoggedIn){
         <%
  	   if (user.getRoleId() == RoleDTO.ADMIN) {
        %>
+       
+             <!-- NFTAsset-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" style="color:white;">NFT Asset</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="<%=ORSView.NFTASSET_CTL%>"><i class="fa fa-user-circle"></i> Add NFTAsset</a>
+            <a class="dropdown-item" href="<%=ORSView.NFTASSET_LIST_CTL%>"><i class="fa fa-user-friends"></i>NFTAsset List</a>
+          </div>
+        </li>
+       
+              <!-- Account-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" style="color:white;">Account</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="<%=ORSView.ACCOUNT_CTL%>"><i class="fa fa-user-circle"></i> Add Account</a>
+            <a class="dropdown-item" href="<%=ORSView.ACCOUNT_LIST_CTL%>"><i class="fa fa-user-friends"></i>Account List</a>
+          </div>
+        </li>
+       
+       
        <!-- LanguageTranslation-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" style="color:white;">LanguageTranslation</a>

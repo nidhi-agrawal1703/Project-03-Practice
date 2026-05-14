@@ -24,13 +24,7 @@ public class LanguageTranslationModelHibImpl extends BaseModel<LanguageTranslati
 		
 		//LanguageTranslationDTO targetDto = null;
 		//targetDto = findByTargetLanguage(dto.getTargetLanguage());
-		
-		//if(sourceDto!=null ) {
-			//if(targetDto!=null) {
-				//throw new DuplicateRecordException("Duplicate Source Language to Target Languge found");
-			//}
-			
-		//}
+				
 		//if (existDto != null) {
 		//	throw new DuplicateRecordException("Duplicate Source Language Code found");
 		//}
